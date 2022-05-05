@@ -188,8 +188,17 @@ Difference: |4 - 19| = 15
 -----------------------------------------------------------------------------*/
 // Your solution for 03- here:
 
+function diagonalDifference(arr){
+  let x = 0
+  let y = 0
+  for (let i = 0; i < arr.length; i++){
+    x += arr[i][i]
+    y += arr[i][2-i]
+  }
+  return Math.abs(x-y)
+}
 
-
+// console.log(diagonalDifference([[1,2,3],[4,5,6],[7,8,9]]))
 
 /*-----------------------------------------------------------------------------
 Challenge: 04 - plusMinus
@@ -210,7 +219,18 @@ The function plusMinus should return an array like this:
 -----------------------------------------------------------------------------*/
 // Your solution for 04- here:
 
+function plusMinus(arr){
+  let a = [0,0,0]
+  for (let i = 0; i < arr.length; i++){
+    arr[i] > 0 ? a[0]++ : arr[i] < 0 ? a[1]++ : a[2]++
+  }
+  let x = (a[0]/arr.length).toFixed(6)
+  let y = (a[1]/arr.length).toFixed(6)
+  let z = (a[2]/arr.length).toFixed(6)
+  return [x,y,z]
+}
 
+plusMinus([1,1,0,-1,-1])
 
 
 /*-----------------------------------------------------------------------------
@@ -391,11 +411,6 @@ function timeConversion(time){
     return time.slice(0,8)
   return `${12+hour}${time.slice(2,8)}`
 }
-
-console.log(timeConversion('07:31:00AM'))
-console.log(timeConversion('07:05:45PM'))
-console.log(timeConversion('12:05:45AM'))
-
 
 
 
