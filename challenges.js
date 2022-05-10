@@ -345,8 +345,6 @@ function miniMaxSum(arr){
   return [min,max]
 }
 
-miniMaxSum([1,2,3,4,5])
-
 
 
 /*-----------------------------------------------------------------------------
@@ -379,7 +377,14 @@ Candle heights are 3, 2, 1, and 3. The tallest candles are 3 units, and there ar
 -----------------------------------------------------------------------------*/
 // Your solution for 07- here:
 
-
+function birthdayCakeCandles(arr){
+  let max = Math.max(...arr)
+  let count = 0
+  for(i = 0; i < arr.length; i++){
+    if(arr[i] === max ) count++
+  }
+  return count
+}
 
 
 
