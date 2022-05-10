@@ -334,8 +334,18 @@ Sum everything except 5, the sum is 10.
 -----------------------------------------------------------------------------*/
 // Your solution for 06- here:
 
+function miniMaxSum(arr){
+  let sum = arr.reduce((acc, nxt) => acc + nxt, 0)
+  let newArr = []
+  for (let i = 0; i < arr.length; i++){
+    newArr.push(sum - arr[i])
+  }
+  let max = Math.max(...newArr)
+  let min = Math.min(...newArr)
+  return [min,max]
+}
 
-
+miniMaxSum([1,2,3,4,5])
 
 
 
