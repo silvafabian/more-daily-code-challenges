@@ -289,12 +289,12 @@ function staircase(n){
   // will be right aligned
   // last index will be just n number of #
 
-  outputArr = []
+  arr = []
 
   for (let i = 1; i <= n; i++){
-    outputArr.push(' '.repeat(n-i) + '#'.repeat(i))
+    arr.push(' '.repeat(n-i) + '#'.repeat(i))
   }
-  return outputArr
+  return arr
 }
 
 // staircase(6)
