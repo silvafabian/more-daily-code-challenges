@@ -483,9 +483,17 @@ Student 4 received a grade below 38, so the grade will not be modified and the s
 -----------------------------------------------------------------------------*/
 // Your solution for 09- here:
 
+function gradingStudents(arr){
+  newArr = []
+  arr.forEach(num => {
+    if (num < 38 ) newArr.push(num)
+    else if ((Math.ceil(num / 5) * 5) - num < 3) newArr.push((Math.ceil(num / 5) * 5)) 
+    else newArr.push(num)
+  })
+  return newArr
+}
 
-
-
+gradingStudents([73,67,38,33])
 
 /*-----------------------------------------------------------------------------
 Challenge: 10 - kangaroo
