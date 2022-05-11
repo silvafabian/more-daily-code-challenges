@@ -493,8 +493,6 @@ function gradingStudents(arr){
   return newArr
 }
 
-gradingStudents([73,67,38,33])
-
 /*-----------------------------------------------------------------------------
 Challenge: 10 - kangaroo
 
@@ -543,9 +541,17 @@ The second kangaroo has a starting location that is ahead (further along the num
 -----------------------------------------------------------------------------*/
 // Your solution for 10- here:
 
-
-
-
+function kangaroo(x1, v1, x2, v2){
+  let a = x1
+  let b = x2
+  if (x2 > x1 && v2 > v1 || x1 > x2 && v1 > v2) return 'NO'
+  for (i = 1; i < 10000; i++){
+    a += v1
+    b += v2
+    if (a === b) return "YES"
+  }
+  return x1 === x2 ? 'YES' : 'NO'
+}
 
 
 /*-----------------------------------------------------------------------------
@@ -559,12 +565,12 @@ Example
 
 Scores are in the same order as the games played. She tabulates her results as follows:
 
-                                     Count
+                                    Count
     Game  Score  Minimum  Maximum   Min Max
-     0      12     12       12       0   0
-     1      24     12       24       0   1
-     2      10     10       24       1   1
-     3      24     10       24       1   1
+    0      12     12       12       0   0
+    1      24     12       24       0   1
+    2      10     10       24       1   1
+    3      24     10       24       1   1
 Given the scores for a season, write a function named breakingRecords to determine the number of times Maria breaks her records for most and least points scored during the season.  
 
 Sample Input 0
@@ -589,4 +595,3 @@ She broke her best record four times and her worst record zero times (no score d
 
 -----------------------------------------------------------------------------*/
 // Your solution for 11- here:
-
